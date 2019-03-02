@@ -3,7 +3,7 @@
 public class EnemyManager : MonoBehaviour
 {
     public float spawnTime = 5f;
-    public Enemy enemy;
+    public EnemyUnit enemy;
     public Transform[] spawnPoints;
 
     void Start()
