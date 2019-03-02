@@ -7,8 +7,8 @@ public class Unit : MonoBehaviour
     public float Health;
     public float Strength;
     public float MovementSpeed;
-    public MeshFilter Mesh;
-    public GameObject Object;
+    public string meshLocation;
+    public GameObject Instance;
 
     // Awake is called before the first frame update
     void Awake()
@@ -20,6 +20,18 @@ public class Unit : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void CreateGameObject()
+    {
+        Instance = new GameObject();
+        
+    }
+
+    void AddMesh()
+    {
+        Instance.AddComponent<MeshFilter>();
+        Instance.GetComponent<MeshFilter>().mesh = (Mesh)Resources.Load(meshLocation, typeof(Mesh));  
     }
 
     void UpdateHealth(float changeAmount)
@@ -35,6 +47,6 @@ public class Unit : MonoBehaviour
 
     void Die()
     {
-
+        Destroy(Instance);
     }
 }
