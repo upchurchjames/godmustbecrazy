@@ -9,12 +9,11 @@ public class Unit : MonoBehaviour
     public float MovementSpeed;
     public string meshLocation;
     public GameObject Instance;
-    public Rigidbody body;
 
     // Awake is called before the first frame update
     void Awake()
     {
-        
+
     }
 
     // Update is called once per frame

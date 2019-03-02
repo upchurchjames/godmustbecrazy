@@ -22,11 +22,11 @@ public class CameraManager : MonoBehaviour
 
     public void SetStartPositionAndSize()
     {
-        FindAveragePosition();
+       // FindAveragePosition();
 
-        transform.position = m_DesiredPosition;
+       // transform.position = m_DesiredPosition;
 
-        m_camera.orthographicSize = FindRequiredSize();
+       // m_camera.orthographicSize = FindRequiredSize();
     }
 
 }

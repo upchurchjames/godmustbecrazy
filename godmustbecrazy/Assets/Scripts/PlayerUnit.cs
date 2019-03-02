@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerUnit : Unit
 {
-    private GameObject instance;
+    public GameObject instance;
+    public Rigidbody2D body;
 
     public enum EnemyType
     {
@@ -17,7 +18,8 @@ public class PlayerUnit : Unit
     // Start is called before the first frame update
     void Start()
     {
-        instance = Instance;
+        instance = gameObject;
+        body = instance.GetComponent<Rigidbody2D>();
         instance.tag = "Player";
     }
 
