@@ -7,13 +7,15 @@ public class PlayerController : MonoBehaviour
     public PlayerUnit player;
     private Rigidbody2D body;
     private float horizontal, vertical;
-    Vector2 movement;
+    private Vector2 movement;
+    private bool isFacingRight;
 
     // Start is called before the first frame update
     void Start()
     {
         body = player.body;
         body.velocity = Vector2.zero;
+        isFacingRight = true;
     }
 
     // Update is called once per frame
@@ -33,6 +35,21 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
+        if((horizontal > 0.0f && !isFacingRight) || (horizontal < 0.0f && isFacingRight))
+        {
+            Flip();
+        }
+
         body.MovePosition(body.position + movement);
+    }
+
+    void Flip()
+    {
+        isFacingRight = !isFacingRight;
+
+        Vector2 theScale = player.transform.localScale;
+        theScale.x *= -1;
+        player.transform.localScale = theScale;
+
     }
 }
