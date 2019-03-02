@@ -4,30 +4,35 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public PlayerUnit player;
     private Rigidbody2D body;
+    private float horizontal, vertical;
+    Vector2 movement;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        body = player.body;
+        body.velocity = Vector2.zero;
     }
 
     // Update is called once per frame
+    void Update()
+    {
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");        
+    }
+
     void FixedUpdate()
     {
-        float horizontal, vertical;
-        Vector2 movement;
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        movement = new Vector2(horizontal, vertical);
+        movement = movement.normalized * player.MovementSpeed;
+        movement *= Time.fixedDeltaTime;
+        Move();
+    }
 
-        foreach (GameObject player in players)
-        {
-            body = player.GetComponent<PlayerUnit>().GetComponent<Rigidbody2D>();
-
-            horizontal = Input.GetAxis("Horizontal");
-            vertical = Input.GetAxis("Vertical");
-            movement = new Vector2(horizontal, vertical);
-
-            body.AddForce(movement * player.GetComponent<PlayerUnit>().MovementSpeed);
-        }
+    void Move()
+    {
+        body.MovePosition(body.position + movement);
     }
 }
