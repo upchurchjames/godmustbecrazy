@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyUnit : Unit
 {
+    private GameObject instance;
+
     public enum EnemyType
     {
         Seraph,
@@ -16,7 +18,8 @@ public class EnemyUnit : Unit
     // Start is called before the first frame update
     void Start()
     {
-
+        instance = Instance;
+        instance.tag = "Enemy";
     }
 
     // Update is called once per frame

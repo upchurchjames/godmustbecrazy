@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerUnit : Unit
 {
+    private GameObject instance;
+
     public enum EnemyType
     {
         Tank,
@@ -15,7 +17,8 @@ public class PlayerUnit : Unit
     // Start is called before the first frame update
     void Start()
     {
-        
+        instance = Instance;
+        instance.tag = "Player";
     }
 
     // Update is called once per frame
