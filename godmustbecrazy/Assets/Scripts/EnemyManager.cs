@@ -5,7 +5,6 @@ public class EnemyManager : MonoBehaviour
     public float spawnTime = 5f;
     public Enemy enemy;
     public Transform[] spawnPoints;
-    public int numEnemy1, numEnemy2, numEnemy3;
 
     void Start()
     {
@@ -14,6 +13,16 @@ public class EnemyManager : MonoBehaviour
 
     void Spawn()
     {
+        GameObject[] temp = new GameObject[25];
+        Transform[] tempTrans = new Transform[25];
+
+        for (int i = 0; i < 25; i++)
+        {
+            temp[i] = new GameObject();
+            temp[i].AddComponent<Transform>();
+            tempTrans[i] = temp[i].transform;
+        }
+
         int spawnPointIndex = Random.Range(0, spawnPoints.Length);
         Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
     }
