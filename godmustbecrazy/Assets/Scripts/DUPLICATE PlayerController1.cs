@@ -2,19 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class DUPLICATEPlayerController : MonoBehaviour
 {
     public PlayerUnit player;
     public float startTimeBetweenAttacks;
     public Transform attackPos;
     public float attackRange;
     public LayerMask whatIsEnemies;
-    private Animator playerAnimation;
+    public Animator playerAnimation;
     private float timeBetweenAttacks;
     private Rigidbody2D body;
     private float horizontal, vertical;
     private Vector2 movement;
     private bool isFacingRight;
+
+    // Allows for customizable keys!  Essential for >1 players.
+    public KeyCode left;
+    public KeyCode right;
+    public KeyCode down;
+    public KeyCode up;
+    public KeyCode attack;
 
     // Start is called before the first frame update
     void Start()
@@ -57,7 +64,8 @@ public class PlayerController : MonoBehaviour
         {
             playerAnimation.SetTrigger("attack");
 
-            if (Input.GetKey(KeyCode.Space))
+            // Was previously KeyCode.Space
+            if (Input.GetKey(attack))
             {
 
                 Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
