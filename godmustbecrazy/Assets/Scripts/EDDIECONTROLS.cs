@@ -50,6 +50,7 @@ public class EDDIECONTROLS : MonoBehaviour
             
         }
 
+        movement.Normalize();
         rb.MovePosition(rb.position + movement * player.MovementSpeed);
     }
 }
