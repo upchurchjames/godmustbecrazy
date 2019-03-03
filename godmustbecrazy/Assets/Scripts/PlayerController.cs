@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public Transform attackPos;
     public float attackRange;
     public LayerMask whatIsEnemies;
+    public Animator playerAnimation;
     private float timeBetweenAttacks;
     private Rigidbody2D body;
     private float horizontal, vertical;
@@ -54,8 +55,11 @@ public class PlayerController : MonoBehaviour
     {
         if(timeBetweenAttacks <= 0)
         {
+            playerAnimation.SetTrigger("attack");
+
             if (Input.GetKey(KeyCode.Space))
             {
+
                 Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
 
                 for(int i = 0; i < enemiesToDamage.Length; i++)
