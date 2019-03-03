@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
         body = player.body;
         body.velocity = Vector2.zero;
         isFacingRight = true;
+        playerAnimation = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -56,22 +57,29 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(left))
         {
             movement += Vector2.left;
+            playerAnimation.SetBool("isRunning", true);
         }
 
         if (Input.GetKey(right))
         {
             movement += Vector2.right;
+            playerAnimation.SetBool("isRunning", true);
         }
 
         if (Input.GetKey(up))
         {
             movement += Vector2.up;
+            playerAnimation.SetBool("isRunning", true);
         }
 
         if (Input.GetKey(down))
         {
             movement += Vector2.down;
+            playerAnimation.SetBool("isRunning", true);
         }
+
+        if(!Input.GetKey(right) && !Input.GetKey(left) && !Input.GetKey(up) && !Input.GetKey(down))
+            playerAnimation.SetBool("isRunning", false);
 
         movement.Normalize();
         body.MovePosition(body.position + movement * player.MovementSpeed);
@@ -85,13 +93,13 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKey(KeyCode.Space))
             {
-
+                playerAnimation.SetTrigger("isAttacking");
                 Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
 
                 for(int i = 0; i < enemiesToDamage.Length; i++)
                 {
                     player.InflictDamage(enemiesToDamage[i].GetComponent<EnemyUnit>(), player.Strength);
-                }
+                } 
             }
 
             timeBetweenAttacks = startTimeBetweenAttacks;

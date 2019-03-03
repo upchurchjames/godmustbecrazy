@@ -15308,6 +15308,7 @@ GameObject:
   - component: {fileID: 324022946}
   - component: {fileID: 324022948}
   - component: {fileID: 324022947}
+  - component: {fileID: 324022949}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -15372,7 +15373,7 @@ Transform:
   m_GameObject: {fileID: 324022943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11.634, y: 9.52, z: -0.08229526}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 11, y: 11, z: 11}
   m_Children:
   - {fileID: 30702833}
   m_Father: {fileID: 0}
@@ -15392,7 +15393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 100
   Strength: 25
-  MovementSpeed: 0.5
+  MovementSpeed: 0.25
   meshLocation: 
   Instance: {fileID: 0}
   instance: {fileID: 0}
@@ -15442,6 +15443,25 @@ MonoBehaviour:
   up: 273
   down: 274
   attack: 0
+--- !u!95 &324022949
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324022943}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f9017977ee1813a4692717ca6eecceee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &326876470
 GameObject:
   m_ObjectHideFlags: 0
@@ -25101,6 +25121,7 @@ GameObject:
   - component: {fileID: 524172119}
   - component: {fileID: 524172120}
   - component: {fileID: 524172116}
+  - component: {fileID: 524172121}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player
@@ -25185,8 +25206,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524172115}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.721238, y: 10.202942, z: -0.05859375}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -7.62, y: 10.202942, z: -0.05859375}
+  m_LocalScale: {x: 11, y: 11, z: 11}
   m_Children:
   - {fileID: 272133238}
   m_Father: {fileID: 0}
@@ -25206,7 +25227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 100
   Strength: 25
-  MovementSpeed: 0.5
+  MovementSpeed: 0.25
   meshLocation: 
   Instance: {fileID: 0}
   instance: {fileID: 0}
@@ -25235,6 +25256,25 @@ MonoBehaviour:
   up: 273
   down: 274
   attack: 0
+--- !u!95 &524172121
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524172115}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 30b17e48c6251c44f9fb943482027b0f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &524511378
 GameObject:
   m_ObjectHideFlags: 0
@@ -68623,7 +68663,7 @@ MonoBehaviour:
   player: {fileID: 1417900252}
   startTimeBetweenAttacks: 0.3
   attackPos: {fileID: 607601057}
-  attackRange: 0.06
+  attackRange: 0.45
   whatIsEnemies:
     serializedVersion: 2
     m_Bits: 0
@@ -68646,7 +68686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 100
   Strength: 25
-  MovementSpeed: 0.5
+  MovementSpeed: 0.25
   meshLocation: 
   Instance: {fileID: 0}
   instance: {fileID: 0}
@@ -68707,8 +68747,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417900249}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.49, y: 10.014, z: -0.08229526}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -11.49, y: 12.61, z: -0.08229526}
+  m_LocalScale: {x: 11, y: 11, z: 11}
   m_Children:
   - {fileID: 607601057}
   m_Father: {fileID: 0}
@@ -68724,7 +68764,7 @@ Animator:
   m_GameObject: {fileID: 1417900249}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 34159ec18a7118b44a3a883c9a589af9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -71669,6 +71709,7 @@ GameObject:
   - component: {fileID: 1476098686}
   - component: {fileID: 1476098685}
   - component: {fileID: 1476098684}
+  - component: {fileID: 1476098689}
   m_Layer: 0
   m_Name: Player4
   m_TagString: Player
@@ -71735,7 +71776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 100
   Strength: 25
-  MovementSpeed: 0.5
+  MovementSpeed: 0.25
   meshLocation: 
   Instance: {fileID: 0}
   instance: {fileID: 0}
@@ -71796,13 +71837,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476098683}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.751, y: 9.661, z: -0.08229526}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -7.48, y: 13.14, z: -0.08229526}
+  m_LocalScale: {x: 11, y: 11, z: 11}
   m_Children:
   - {fileID: 498274821}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1476098689
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476098683}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 71b3630f87215e6469de19bfd8361da8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1477243345
 GameObject:
   m_ObjectHideFlags: 0

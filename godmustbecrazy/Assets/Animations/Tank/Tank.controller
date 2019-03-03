@@ -16,7 +16,7 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: isAttacking
-    m_Type: 4
+    m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -183,7 +183,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5786e815b4af7274c945db73c1c2796e, type: 2}
+  m_Motion: {fileID: 7400000, guid: a943a8c082c259a4f89b8f18d9187c67, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -210,7 +210,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ddce3a18fab15544e92bb6260513bbea, type: 2}
+  m_Motion: {fileID: 7400000, guid: 477abbe550dc9ad4abe2c5cf77080d37, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
