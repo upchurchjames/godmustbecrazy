@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private int numPlayers;
+
     public void PlayGame()
     {
         // Will load things sequentially.
@@ -24,4 +26,37 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
     */
+
+    public void onePlayer()
+    {
+        numPlayers = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void twoPlayers()
+    {
+        numPlayers = 2;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void threePlayers()
+    {
+        numPlayers = 3;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void fourPlayers()
+    {
+        numPlayers = 4;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    // Will create a pointer for each player present, to pick a character.
+    //public void characterSelect()
+    //{
+    //    for (int i = 1; i <= numPlayers; i++)
+    //    {
+            
+    //    }
+    //}
 }
