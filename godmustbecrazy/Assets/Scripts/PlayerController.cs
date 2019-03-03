@@ -5,6 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public PlayerUnit player;
+    public float startTimeBetweenAttacks;
+    public Transform attackPos;
+    public float attackRange;
+    public LayerMask whatIsEnemies;
+    private float timeBetweenAttacks;
     private Rigidbody2D body;
     private float horizontal, vertical;
     private Vector2 movement;
@@ -22,7 +27,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");        
+        vertical = Input.GetAxisRaw("Vertical");
+
+        Attack();
     }
 
     void FixedUpdate()
@@ -41,6 +48,34 @@ public class PlayerController : MonoBehaviour
         }
 
         body.MovePosition(body.position + movement);
+    }
+
+    void Attack()
+    {
+        if(timeBetweenAttacks <= 0)
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
+
+                for(int i = 0; i < enemiesToDamage.Length; i++)
+                {
+                    player.InflictDamage(enemiesToDamage[i].GetComponent<EnemyUnit>(), player.Strength);
+                }
+            }
+
+            timeBetweenAttacks = startTimeBetweenAttacks;
+        }
+        else
+        {
+            timeBetweenAttacks -= Time.deltaTime;
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position, attackRange);
     }
 
     void Flip()

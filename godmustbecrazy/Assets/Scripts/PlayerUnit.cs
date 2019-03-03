@@ -29,7 +29,7 @@ public class PlayerUnit : Unit
         
     }
 
-    void InflictDamage(EnemyUnit prey, float damageAmount)
+    public void InflictDamage(EnemyUnit prey, float damageAmount)
     {
         prey.UpdateHealth(-damageAmount);
     }
