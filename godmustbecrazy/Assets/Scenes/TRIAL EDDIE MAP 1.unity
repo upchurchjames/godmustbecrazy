@@ -97181,6 +97181,7 @@ GameObject:
   - component: {fileID: 2018340149}
   - component: {fileID: 2018340148}
   - component: {fileID: 2018340150}
+  - component: {fileID: 2018340151}
   m_Layer: 0
   m_Name: Rock (Player 1)
   m_TagString: Player
@@ -97286,7 +97287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 0
   Strength: 0
-  MovementSpeed: 10
+  MovementSpeed: 0.5
   meshLocation: 
   Instance: {fileID: 0}
   instance: {fileID: 0}
@@ -97298,7 +97299,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018340145}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5192d6bbf7788304d9c5b7606865e636, type: 3}
   m_Name: 
@@ -97310,7 +97311,24 @@ MonoBehaviour:
   whatIsEnemies:
     serializedVersion: 2
     m_Bits: 0
-  playerAnimation: {fileID: 0}
+--- !u!114 &2018340151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018340145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e80d2440e771c134aaeb1e41b5591195, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2018340149}
+  left: 97
+  right: 100
+  up: 119
+  down: 115
+  attack: 32
 --- !u!1 &2020069790
 GameObject:
   m_ObjectHideFlags: 0
@@ -100402,6 +100420,7 @@ GameObject:
   - component: {fileID: 2101638096}
   - component: {fileID: 2101638098}
   - component: {fileID: 2101638097}
+  - component: {fileID: 2101638099}
   m_Layer: 0
   m_Name: Wizard (Player 2)
   m_TagString: Untagged
@@ -100486,7 +100505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 0
   Strength: 0
-  MovementSpeed: 10
+  MovementSpeed: 0.5
   meshLocation: 
   Instance: {fileID: 0}
   instance: {fileID: 0}
@@ -100498,7 +100517,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2101638093}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5192d6bbf7788304d9c5b7606865e636, type: 3}
   m_Name: 
@@ -100510,7 +100529,6 @@ MonoBehaviour:
   whatIsEnemies:
     serializedVersion: 2
     m_Bits: 0
-  playerAnimation: {fileID: 0}
 --- !u!50 &2101638098
 Rigidbody2D:
   serializedVersion: 4
@@ -100532,6 +100550,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2101638099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101638093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e80d2440e771c134aaeb1e41b5591195, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2101638096}
+  left: 276
+  right: 275
+  up: 273
+  down: 274
+  attack: 48
 --- !u!1 &2101885527
 GameObject:
   m_ObjectHideFlags: 0

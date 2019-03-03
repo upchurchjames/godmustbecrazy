@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        if((horizontal > 0.0f && !isFacingRight) || (horizontal < 0.0f && isFacingRight))
+        if ((horizontal > 0.0f && !isFacingRight) || (horizontal < 0.0f && isFacingRight))
         {
             Flip();
         }

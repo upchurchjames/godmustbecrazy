@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class EDDIECONTROLS : MonoBehaviour
 {
-    public float moveSpeed = 18;
+    public PlayerUnit player;
+    private Vector2 movement;
+
 
     public KeyCode left;
     public KeyCode right;
@@ -12,56 +14,88 @@ public class EDDIECONTROLS : MonoBehaviour
     public KeyCode down;
     public KeyCode attack;
 
-    private Rigidbody2D theRB;
+    private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        theRB = GetComponent<Rigidbody2D>();    
+        rb = GetComponent<Rigidbody2D>();    
     }
 
+
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (Input.GetKey(left))
         {
-            theRB.velocity = new Vector2(-moveSpeed, theRB.velocity.y);
-
             if (Input.GetKey(up))
             {
-
+                movement = new Vector2(-player.MovementSpeed, player.MovementSpeed);
+                rb.MovePosition(rb.position + movement);
             }
 
             if (Input.GetKey(down))
             {
+                movement = new Vector2(-player.MovementSpeed, -player.MovementSpeed);
+                rb.MovePosition(rb.position + movement);
+            }
 
+            movement = new Vector2(-player.MovementSpeed, 0);
+            rb.MovePosition(rb.position + movement);
+        }
+
+        if (Input.GetKey(right))
+        {
+            if (Input.GetKey(up))
+            {
+                movement = new Vector2(player.MovementSpeed, player.MovementSpeed);
+                rb.MovePosition(rb.position + movement);
+            }
+
+            if (Input.GetKey(down))
+            {
+                movement = new Vector2(player.MovementSpeed, -player.MovementSpeed);
+                rb.MovePosition(rb.position + movement);
+            }
+
+            movement = new Vector2(player.MovementSpeed, 0);
+            rb.MovePosition(rb.position + movement);
+        }
+
+        if (Input.GetKey(up))
+        {
+            if (Input.GetKey(left))
+            {
+                movement = new Vector2(-player.MovementSpeed, player.MovementSpeed);
+                rb.MovePosition(rb.position + movement);
             }
 
             if (Input.GetKey(right))
             {
-
+                movement = new Vector2(player.MovementSpeed, player.MovementSpeed);
+                rb.MovePosition(rb.position + movement);
             }
+
+            movement = new Vector2(0, player.MovementSpeed);
+            rb.MovePosition(rb.position + movement);
         }
 
-        else if (Input.GetKey(right))
+        if (Input.GetKey(down))
         {
-            theRB.velocity = new Vector2(moveSpeed, theRB.velocity.y);
-        }
+            if (Input.GetKey(left))
+            {
+                movement = new Vector2(player.MovementSpeed, -player.MovementSpeed);
+                rb.MovePosition(rb.position + movement);
+            }
 
-        else if (Input.GetKey(up))
-        {
-            theRB.velocity = new Vector2(moveSpeed, theRB.velocity.x);
-        }
+            if (Input.GetKey(right))
+            {
+                movement = new Vector2(player.MovementSpeed, -player.MovementSpeed);
+                rb.MovePosition(rb.position + movement);
+            }
 
-        else if (Input.GetKey(down))
-        {
-            theRB.velocity = new Vector2(-moveSpeed, theRB.velocity.x);
+            movement = new Vector2(0, -player.MovementSpeed);
+            rb.MovePosition(rb.position + movement);
         }
-
-        else
-        {
-            theRB.velocity = new Vector2(0, 0);
-        }
-
     }
 }
