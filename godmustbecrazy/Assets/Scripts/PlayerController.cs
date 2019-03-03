@@ -85,21 +85,26 @@ public class PlayerController : MonoBehaviour
         body.MovePosition(body.position + movement * player.MovementSpeed);
     }
 
-    void Attack()
+    IEnumerator Attack()
     {
         if(timeBetweenAttacks <= 0)
         {
-            //playerAnimation.SetTrigger("attack");
-
             if (Input.GetKey(KeyCode.Space))
             {
-                playerAnimation.SetTrigger("isAttacking");
+                playerAnimation.SetBool("isAttacking", true);
+
+                while (playerAnimation.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
+                    yield return null;
+
+                playerAnimation.SetBool("isAttacking", false);
+
                 Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
 
                 for(int i = 0; i < enemiesToDamage.Length; i++)
                 {
                     player.InflictDamage(enemiesToDamage[i].GetComponent<EnemyUnit>(), player.Strength);
-                } 
+                }
+
             }
 
             timeBetweenAttacks = startTimeBetweenAttacks;
@@ -108,6 +113,7 @@ public class PlayerController : MonoBehaviour
         {
             timeBetweenAttacks -= Time.deltaTime;
         }
+
     }
 
     void OnDrawGizmosSelected()
