@@ -13,8 +13,14 @@ public class PlayerController : MonoBehaviour
     private float timeBetweenAttacks;
     private Rigidbody2D body;
     private float horizontal, vertical;
-    private Vector2 movement;
+    private Vector2 faceMovement, movement;
     private bool isFacingRight;
+
+    public KeyCode left;
+    public KeyCode right;
+    public KeyCode up;
+    public KeyCode down;
+    public KeyCode attack;
 
     // Start is called before the first frame update
     void Start()
@@ -35,20 +41,40 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        movement = new Vector2(horizontal, vertical);
-        movement = movement.normalized * player.MovementSpeed;
-        movement *= Time.fixedDeltaTime;
         Move();
     }
 
     void Move()
     {
+        movement = Vector2.zero;
+
         if ((horizontal > 0.0f && !isFacingRight) || (horizontal < 0.0f && isFacingRight))
         {
             Flip();
         }
 
-        body.MovePosition(body.position + movement);
+        if (Input.GetKey(left))
+        {
+            movement += Vector2.left;
+        }
+
+        if (Input.GetKey(right))
+        {
+            movement += Vector2.right;
+        }
+
+        if (Input.GetKey(up))
+        {
+            movement += Vector2.up;
+        }
+
+        if (Input.GetKey(down))
+        {
+            movement += Vector2.down;
+        }
+
+        movement.Normalize();
+        body.MovePosition(body.position + movement * player.MovementSpeed);
     }
 
     void Attack()

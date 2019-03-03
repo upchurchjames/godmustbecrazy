@@ -15392,7 +15392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 100
   Strength: 25
-  MovementSpeed: 10
+  MovementSpeed: 0.5
   meshLocation: 
   Instance: {fileID: 0}
   instance: {fileID: 0}
@@ -15437,6 +15437,11 @@ MonoBehaviour:
   whatIsEnemies:
     serializedVersion: 2
     m_Bits: 0
+  left: 276
+  right: 275
+  up: 273
+  down: 274
+  attack: 0
 --- !u!1 &326876470
 GameObject:
   m_ObjectHideFlags: 0
@@ -25201,7 +25206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 100
   Strength: 25
-  MovementSpeed: 10
+  MovementSpeed: 0.5
   meshLocation: 
   Instance: {fileID: 0}
   instance: {fileID: 0}
@@ -25225,6 +25230,11 @@ MonoBehaviour:
   whatIsEnemies:
     serializedVersion: 2
     m_Bits: 0
+  left: 276
+  right: 275
+  up: 273
+  down: 274
+  attack: 0
 --- !u!1 &524511378
 GameObject:
   m_ObjectHideFlags: 0
@@ -68617,6 +68627,11 @@ MonoBehaviour:
   whatIsEnemies:
     serializedVersion: 2
     m_Bits: 0
+  left: 276
+  right: 275
+  up: 273
+  down: 274
+  attack: 0
 --- !u!114 &1417900252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68631,7 +68646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 100
   Strength: 25
-  MovementSpeed: 10
+  MovementSpeed: 0.5
   meshLocation: 
   Instance: {fileID: 0}
   instance: {fileID: 0}
@@ -71701,6 +71716,11 @@ MonoBehaviour:
   whatIsEnemies:
     serializedVersion: 2
     m_Bits: 0
+  left: 276
+  right: 275
+  up: 273
+  down: 274
+  attack: 0
 --- !u!114 &1476098686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71715,7 +71735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 100
   Strength: 25
-  MovementSpeed: 10
+  MovementSpeed: 0.5
   meshLocation: 
   Instance: {fileID: 0}
   instance: {fileID: 0}
