@@ -19,83 +19,37 @@ public class EDDIECONTROLS : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();    
+        rb = GetComponent<Rigidbody2D>();
+        movement = Vector2.zero; 
     }
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        movement = Vector2.zero;
+
         if (Input.GetKey(left))
         {
-            if (Input.GetKey(up))
-            {
-                movement = new Vector2(-player.MovementSpeed, player.MovementSpeed);
-                rb.MovePosition(rb.position + movement);
-            }
-
-            if (Input.GetKey(down))
-            {
-                movement = new Vector2(-player.MovementSpeed, -player.MovementSpeed);
-                rb.MovePosition(rb.position + movement);
-            }
-
-            movement = new Vector2(-player.MovementSpeed, 0);
-            rb.MovePosition(rb.position + movement);
+            movement += Vector2.left;
         }
 
         if (Input.GetKey(right))
         {
-            if (Input.GetKey(up))
-            {
-                movement = new Vector2(player.MovementSpeed, player.MovementSpeed);
-                rb.MovePosition(rb.position + movement);
-            }
-
-            if (Input.GetKey(down))
-            {
-                movement = new Vector2(player.MovementSpeed, -player.MovementSpeed);
-                rb.MovePosition(rb.position + movement);
-            }
-
-            movement = new Vector2(player.MovementSpeed, 0);
-            rb.MovePosition(rb.position + movement);
+            movement += Vector2.right;
         }
 
         if (Input.GetKey(up))
         {
-            if (Input.GetKey(left))
-            {
-                movement = new Vector2(-player.MovementSpeed, player.MovementSpeed);
-                rb.MovePosition(rb.position + movement);
-            }
-
-            if (Input.GetKey(right))
-            {
-                movement = new Vector2(player.MovementSpeed, player.MovementSpeed);
-                rb.MovePosition(rb.position + movement);
-            }
-
-            movement = new Vector2(0, player.MovementSpeed);
-            rb.MovePosition(rb.position + movement);
+            movement += Vector2.up;
         }
 
         if (Input.GetKey(down))
         {
-            if (Input.GetKey(left))
-            {
-                movement = new Vector2(player.MovementSpeed, -player.MovementSpeed);
-                rb.MovePosition(rb.position + movement);
-            }
-
-            if (Input.GetKey(right))
-            {
-                movement = new Vector2(player.MovementSpeed, -player.MovementSpeed);
-                rb.MovePosition(rb.position + movement);
-            }
-
-            movement = new Vector2(0, -player.MovementSpeed);
-            rb.MovePosition(rb.position + movement);
+            movement += Vector2.down;
+            
         }
+
+        rb.MovePosition(rb.position + movement * player.MovementSpeed);
     }
 }

@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
     {
         if(timeBetweenAttacks <= 0)
         {
-            playerAnimation.SetTrigger("attack");
+            //playerAnimation.SetTrigger("attack");
 
             if (Input.GetKey(KeyCode.Space))
             {
