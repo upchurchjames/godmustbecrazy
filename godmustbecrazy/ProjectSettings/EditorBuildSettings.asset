@@ -8,4 +8,22 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: fbee2442c3ad2c047be82e7618c0180a
+  - enabled: 1
+    path: Assets/Scenes/PlayerSelect.unity
+    guid: 1e538f64df3156646bede586661ecf38
+  - enabled: 1
+    path: Assets/Scenes/1Player.unity
+    guid: f6b0975a9cb539a44a0ad154a6915233
+  - enabled: 1
+    path: Assets/Scenes/2Players.unity
+    guid: 116d790c51f053149b621656ce38548f
+  - enabled: 1
+    path: Assets/Scenes/3Players.unity
+    guid: 5374c0eaa5face44d9bcd533962a92a7
+  - enabled: 1
+    path: Assets/Scenes/4Players.unity
+    guid: cfd2faa3b53e98c47a692f2e8a350639
   m_configObjects: {}
