@@ -32,17 +32,18 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
+    //void Update()
+    //{
+    //    horizontal = Input.GetAxisRaw("Horizontal");
+    //    vertical = Input.GetAxisRaw("Vertical");
 
-        Attack();
-    }
+    //}
 
     void FixedUpdate()
     {
         Move();
+
+        Attack();
     }
 
     void Move()
@@ -56,12 +57,23 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(left))
         {
+            if (isFacingRight)
+            {
+                Flip();
+            }
+
             movement += Vector2.left;
             playerAnimation.SetBool("isRunning", true);
+
         }
 
         if (Input.GetKey(right))
         {
+            if (!isFacingRight)
+            {
+                Flip();
+            }
+
             movement += Vector2.right;
             playerAnimation.SetBool("isRunning", true);
         }
