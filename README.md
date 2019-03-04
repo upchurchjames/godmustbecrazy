@@ -5,6 +5,9 @@ Greek-themed game.  Fight against the gods through a series of challenges they t
 
 
 
-Created by James Upchurch, Travis Kerr, Joseph Rivera, and Edward M. Abrahamson
-*WE DO NOT OWN ANY OF THE ASSETS USED IN THIS PROJECT.
-ASSETS HAVE BEEN USED ONLY FOR EDUCATIONAL PURPOSES IN THIS FREE, EXPERIMENTAL PROJECT*
+Created by James Upchurch, Travis Kerr, Joseph Rivera, and Edward M. Abrahamson.
+
+
+
+\*WE DO NOT OWN ANY OF THE ASSETS USED IN THIS PROJECT.
+ASSETS HAVE BEEN USED ONLY FOR EDUCATIONAL PURPOSES IN THIS FREE, EXPERIMENTAL PROJECT\*
