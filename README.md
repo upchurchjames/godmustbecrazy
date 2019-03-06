@@ -1,7 +1,7 @@
 # godmustbecrazy
 Almighty Game  |  KnightHacks 2019.
 
-Greek-themed game.  Fight against the gods through a series of challenges they throw at you!  1-4 players supported.  Action/Adventure game.  
+Greek-themed game.  Fight against the gods through a series of challenges they throw at you!  1-4 players supported.  Action/Adventure game.  Currently just a walking-simulator with multiplayer - feel free to walk around and explore the map!  
 
 Controls:  
  -Player 1: WASD  
